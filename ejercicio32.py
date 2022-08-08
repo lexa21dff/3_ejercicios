@@ -7,15 +7,10 @@ for i in range(10):
     print(numeros)
     numeros=[]
     t +=1
-    while True:
-        #derecha
-        b += 1
-        for j in range(1,10):
-            if j > t:
-                numeros.append(j)
-        if b == 1:
-            b = 0
-            break
+    for j in range(1,10):
+        if j > t:
+        #izquierda
+            numeros.append(j)
     # movimiento de x
     numeros.append(x)
     for l in range(1,t+1):

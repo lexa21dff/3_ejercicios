@@ -1,32 +1,38 @@
-matriz1 = []
-matriz2 = []
-suma_matrices = []
-b = 0
-n = int (input('ingrese un valor')) #filas
-m = int (input('ingrese un valor')) #columnas
+matriz1 = [[1,2,3],[6,7,8],[4,5,3]]
+matriz2 = [[4,5,5]
+           ,[9,0,3],
+           [2,3,4]]
+multiplicacion = []
+suma = 0
 
-for i in range(n):
-    matriz1.append([])
-    matriz2.append([])
-    suma_matrices.append([])
-    while True:
-        b += 1
+for i in range(3):
+    multiplicacion.append([])
+    for j in range(3):
+        suma = 0
+        for l in range(3):
+            multiplicacionr = matriz1[i][l] * matriz2[l][j]
+            print(multiplicacionr)
+            suma = suma + multiplicacionr
+        multiplicacion[i].append(suma)
+        print('suma ',suma)
+            
+              
+                 
 
-        for t in range(m):
-            m1 = int (input('ingrese un valor a la matriz uno'))
-            m2 = int(input('ingrese un valor a la matriz dos'))
-            # ingresar datos a la matriz1 m1
-            matriz1[i].append(m1)
-            # ingresar datos a la matriz2 m2
-            matriz2[i].append(m2)
-            # suma de la matriz1 y matriz2
-            suma = matriz1[i][t] * matriz2[i][t]
-            suma_matrices[i].append(suma)
-        if b == 1:
-            b = 0
-            break
+def mostrarmatriz(matriz):
+    for n in range(3):
+        for z in range(3):
+            print(matriz[n][z], end=' ')
+            if z == 3-1:
+                print('\n')   
+   
+        
+        
+print('matriz uno')            
+mostrarmatriz(matriz1)  
+print('matriz dos')     
+mostrarmatriz(matriz2) 
+            
+print('resultado de la multiplicacion de la matriz uno x la matriz dos')
 
-
-print('matriz uno ',matriz1)
-print('matriz dos ',matriz2)
-print('suma de la matriz uno y dos ',suma_matrices)
+mostrarmatriz(multiplicacion)
